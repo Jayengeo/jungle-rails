@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <h4><%=category.name%></h4>
+  </td>
+  <td>
+    <%= category.products.count %>
+  </td>
+  <td>
+   <% sum = 0%>
+   <% category.products.each do |products|%>
+   <% sum += products.quantity %>
+   <% end %> 
+   <%=sum %>
+  </td>
+</tr> 
