@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories, only: [:index, :new, :create]
   end 
 
   get '/about' => 'about#show'
@@ -68,9 +69,9 @@ Rails.application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    # namespace :admin do
+    #   Directs /admin/products/* to Admin::ProductsController
+    #   (app/controllers/admin/products_controller.rb)
+    #   resources :products
+    # end
 end
